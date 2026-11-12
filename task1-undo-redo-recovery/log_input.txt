@@ -1,0 +1,12 @@
+<T1 start>
+<T1, X, 100, 150>
+<T2 start>
+<T2, Y, 200, 250>
+<T1 commit>
+<T3 start>
+<T3, Z, 300, 350>
+<T2, Y, 250, 275>
+<T4 start>
+<T4, X, 150, 175>
+<T4 abort>
+<T2 commit>
