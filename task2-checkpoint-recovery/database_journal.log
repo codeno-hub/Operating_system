@@ -1,0 +1,49 @@
+<T1 start>
+<T1, A, 100, 110>
+<T1, B, 200, 220>
+<T1 commit>
+<T2 start>
+<T2, C, 300, 330>
+<T2 commit>
+<T3 start>
+<T3, D, 400, 440>
+<T3 commit>
+<T4 start>
+<T4, E, 500, 550>
+<T4 commit>
+<T5 start>
+<T5, A, 110, 115>
+<T5 commit>
+<T6 start>
+<T6, B, 220, 225>
+<T6, C, 330, 335>
+<T6 commit>
+<T9 start>
+<T9, A, 115, 120>
+<T9 commit>
+<T7 start>
+<T7, D, 440, 450>
+<T8 start>
+<T8, E, 550, 560>
+<checkpoint T7, T8>
+<T7, B, 225, 230>
+<T7 commit>
+<T10 start>
+<T10, C, 335, 345>
+<T10 commit>
+<T8 abort>
+<T13 start>
+<T13, B, 230, 240>
+<T13 commit>
+<T11 start>
+<T11, A, 120, 130>
+<T12 start>
+<T12, E, 550, 575>
+<checkpoint T11, T12>
+<T11, D, 450, 470>
+<T11 commit>
+<T14 start>
+<T14, C, 345, 999>
+<T15 start>
+<T15, B, 240, 250>
+<T15 commit>
