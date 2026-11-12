@@ -1,0 +1,61 @@
+# Task 1: Log-Based Undo and Redo Recovery
+
+A Python simulation of a database recovery manager. After a simulated crash, it reads a transaction log and works out the final value of each variable by **undoing** incomplete transactions and **redoing** committed ones.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `recovery_manager.py` | The recovery manager (undo/redo logic) |
+| `log_input.txt` | Sample transaction log |
+| `console_output.png` | Screenshot of the console output |
+| `recovery_logic.pdf` | Short report: why a transaction with a start but no commit must be undone |
+
+## How to run
+
+Requires Python 3 only (no external packages). Run from inside this folder:
+
+```bash
+python3 recovery_manager.py
+```
+
+To use a different log file: `python3 recovery_manager.py my_log.txt`
+
+## Log format
+
+```
+<T1 start>
+<T1, X, 100, 150>     <transaction, variable, old value (v1), new value (v2)>
+<T1 commit>
+<T1 abort>
+```
+
+## How it works
+
+1. **Classify** each transaction:
+   - **Committed**: has a `start` and a `commit` record, so it is redone.
+   - **Incomplete**: has a `start` but no `commit` or `abort`, so it is undone.
+   - **Aborted**: has an `abort` record. These are also undone, which is harmless because undo can safely be repeated, and it covers a crash in the middle of a rollback.
+2. **Undo phase**: scan the log **backward** and restore each variable to its old value (v1) for every undone transaction.
+3. **Redo phase**: scan the log **forward** and write the new value (v2) for every committed transaction.
+
+The simulation starts from a disk state in which some uncommitted changes were already written (`X=175`, `Z=350`) and some committed changes were not (`Y=200`), so both phases have work to do.
+
+## Sample log
+
+| Transaction | Outcome | Action |
+|---|---|---|
+| T1 | committed | redo `X = 150` |
+| T2 | committed | redo `Y = 250`, then `Y = 275` |
+| T3 | no commit (incomplete) | undo `Z` back to 300 |
+| T4 | aborted | undo `X` back to 150 |
+
+## Expected output (final values)
+
+```
+X = 150
+Y = 275
+Z = 300
+```
+
+See `console_output.png` for the full output.
