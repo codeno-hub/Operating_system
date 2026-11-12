@@ -1,0 +1,69 @@
+# Task 2: Database Checkpoints and Active Lists
+
+A Python simulation of database **checkpointing**. A checkpoint flushes everything held in volatile memory to stable storage and writes a `<checkpoint L>` record, where **L** is the list of transactions that have started but not yet committed. Recovery then uses the checkpoint to avoid scanning the whole log.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `checkpoint_manager.py` | Simulated database, checkpoint procedure, `get_active_transactions()` and crash recovery |
+| `database_journal.log` | The log produced by the simulation (49 records, 2 checkpoints) |
+| `recovery_efficiency.docx` | Comparison table of log records scanned with vs. without a checkpoint |
+
+## How to run
+
+Requires Python 3 only (no external packages). Run from inside this folder:
+
+```bash
+python3 checkpoint_manager.py
+```
+
+This regenerates `database_journal.log`, simulates a crash, runs recovery both ways, and prints the comparison.
+
+## Log format
+
+```
+<T1 start>
+<T1, A, 100, 110>        <transaction, variable, old value, new value>
+<T1 commit>
+<T1 abort>
+<checkpoint T7, T8>      L = transactions active at the checkpoint
+<checkpoint>             L is empty
+```
+
+## The checkpoint procedure
+
+1. Flush the log buffer to stable storage (write-ahead logging: the log goes first).
+2. Flush every dirty data page to disk.
+3. Write `<checkpoint L>` and flush it to the log.
+
+After this, the script asserts that the log buffer and dirty pages are empty and that disk matches memory.
+
+## `get_active_transactions(log_path, upto=None)`
+
+Parses a log file and returns the list **L** of active transactions (started, with no commit or abort), in start order. `upto` is the number of records to read, so L can be found at any point in the log. The script uses it to check that each checkpoint's logged L matches the transactions actually active at that point.
+
+## Recovery
+
+Recovery uses undo/redo, as in Task 1:
+
+- **Backward scan** from the end of the log: undo updates of transactions with no commit record.
+- **Forward scan**: redo updates of committed transactions.
+
+With a checkpoint, the backward scan stops once it has reached the most recent checkpoint **and** seen the start record of every transaction in L. Without a checkpoint it runs back to the first record.
+
+## Results
+
+| | Without checkpoint | With checkpoint |
+|---|---|---|
+| Backward (undo) scan | 49 | 12 |
+| Forward (redo) scan | 49 | 12 |
+| **Total records scanned** | **98** | **24** |
+
+That is **75.5% fewer** records scanned. Both runs end in the same correct state:
+
+```
+A = 130, B = 250, C = 345, D = 470, E = 550
+```
+
+The scan starts at record 38 (the start of T11) rather than at the checkpoint record (42), because T11 was in L and began before the checkpoint.
