@@ -1,0 +1,8 @@
+Player,Team,Runs
+Kohli,RCB,973
+Maxwell,RCB,552
+Rohit,MI,405
+Patidar,RCB,395
+Jadeja,CSK,300
+Dhoni,CSK,236
+Bumrah,MI,12

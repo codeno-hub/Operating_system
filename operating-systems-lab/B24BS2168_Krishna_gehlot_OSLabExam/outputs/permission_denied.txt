@@ -1,0 +1,1 @@
+-bash: ./scripts/perm_check.sh: Permission denied

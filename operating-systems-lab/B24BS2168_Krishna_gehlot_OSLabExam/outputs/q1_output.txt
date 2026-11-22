@@ -1,0 +1,25 @@
+===== USER INFORMATION =====
+a
+/home/a/B24BS2168_Krishna_gehlot_OSLabExam
+-bash
+===== SYSTEM INFORMATION =====
+Linux LAPTOP-P2LPS6J8 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+===== RCB PLAYERS =====
+Kohli
+Maxwell
+Patidar
+===== DISTINCT TEAM COUNT =====
+3
+===== TOP SCORERS =====
+Player,Team,Runs
+Kohli,RCB,973
+Maxwell,RCB,552
+Rohit,MI,405
+Patidar,RCB,395
+Jadeja,CSK,300
+Dhoni,CSK,236
+Bumrah,MI,12
+===== TOTAL IPL RECORDS =====
+9 commands/ipl_stats.txt
+===== ERROR REDIRECTION =====
+ls: cannot access '/no/such/path': No such file or directory

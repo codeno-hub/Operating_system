@@ -1,0 +1,17 @@
+===== PRIVATE FILE =====
+File: commands/fs_lab/private.txt
+Permission: 600
+Status: PRIVATE
+
+===== SHARED FILE =====
+File: commands/fs_lab/shared.txt
+Permission: 644
+Status: SHARED-READ
+
+===== RUN SCRIPT FILE =====
+File: commands/fs_lab/run.sh
+Permission: 700
+Status: PRIVATE
+
+===== NON-EXISTENT FILE =====
+File not found

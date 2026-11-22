@@ -1,0 +1,41 @@
+===== ALL RUNNING PROCESSES =====
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  21760 12256 ?        Ss   13:49   0:00 /sbin/init
+root           2  0.0  0.0   3120  1920 ?        Sl   13:49   0:00 /init
+root           7  0.0  0.0   3120  1792 ?        Sl   13:49   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          43  0.0  0.1  66848 14944 ?        S<s  13:49   0:00 /usr/lib/systemd/systemd-journald
+root          89  0.0  0.0  25152  6272 ?        Ss   13:49   0:00 /usr/lib/systemd/systemd-udevd
+systemd+     156  0.0  0.1  21344 12672 ?        Ss   13:49   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     157  0.0  0.0  91036  7552 ?        Ssl  13:49   0:00 /usr/lib/systemd/systemd-timesyncd
+root         166  0.0  0.0   4240  2432 ?        Ss   13:49   0:00 /usr/sbin/cron -f -P
+message+     167  0.0  0.0   9656  4864 ?        Ss   13:49   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         181  0.0  0.1  17976  8064 ?        Ss   13:49   0:00 /usr/lib/systemd/systemd-logind
+root         196  0.0  0.0   3164  1920 hvc0     Ss+  13:49   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 vt220
+syslog       206  0.0  0.0 222516  5248 ?        Ssl  13:49   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         212  0.0  0.0   3120  1792 tty1     Ss+  13:49   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         238  0.0  0.2 107044 22016 ?        Ssl  13:49   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         382  0.0  0.0   6700  4224 pts/1    Ss   13:49   0:00 /bin/login -f
+a            462  0.0  0.1  20324 11264 ?        Ss   13:50   0:00 /usr/lib/systemd/systemd --user
+a            471  0.0  0.0  21168  3440 ?        S    13:50   0:00 (sd-pam)
+a            508  0.0  0.0   6076  4992 pts/1    S+   13:50   0:00 -bash
+root         593  0.0  0.0   3136   900 ?        Ss   13:50   0:00 /init
+root         594  0.0  0.0   3136  1036 ?        S    13:50   0:00 /init
+a            596  0.0  0.0   6076  5248 pts/0    Ss+  13:50   0:00 -bash
+polkitd     1071  0.0  0.0 308180  7680 ?        Ssl  13:58   0:00 /usr/lib/polkit-1/polkitd --no-debug
+root        1275  0.0  0.0   3136   900 ?        Ss   14:08   0:00 /init
+root        1276  0.0  0.0   3136  1164 ?        S    14:08   0:00 /init
+a           1281  0.0  0.0   6592  5760 pts/2    Ss   14:08   0:00 -bash
+root        1611  0.1  0.1 1756628 12928 ?       Ssl  14:52   0:00 /usr/libexec/wsl-pro-service
+a           1633  0.0  0.0   3128  1664 pts/2    S    14:53   0:00 sleep 60
+a           1634  0.0  0.0   3128  1664 pts/2    S    14:53   0:00 sleep 50
+a           1635  0.0  0.0   3128  1664 pts/2    S    14:53   0:00 sleep 40
+a           1636  0.0  0.0   8288  4096 pts/2    R+   14:53   0:00 ps aux
+===== PROCESS COUNT =====
+32
+===== BACKGROUND SLEEP PROCESSES =====
+    PID STAT COMMAND
+   1633 S    sleep
+   1634 S    sleep
+   1635 S    sleep
+===== LAST BACKGROUND PROCESS PID =====
+1635

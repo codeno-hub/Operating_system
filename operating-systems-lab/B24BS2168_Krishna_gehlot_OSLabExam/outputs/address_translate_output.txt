@@ -1,0 +1,17 @@
+Logical Address: 9
+Page Number: 2
+Offset: 1
+Frame Number: 1
+Physical Address: 5
+
+Logical Address: 14
+Page Number: 3
+Offset: 2
+Frame Number: 7
+Physical Address: 30
+
+Logical Address: 17
+Page Number: 4
+Offset: 1
+Page Fault: invalid page
+

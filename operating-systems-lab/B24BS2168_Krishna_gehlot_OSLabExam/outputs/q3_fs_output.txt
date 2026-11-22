@@ -1,0 +1,32 @@
+===== DIRECTORY TREE =====
+commands/fs_lab
+commands/fs_lab/private
+commands/fs_lab/shared
+commands/fs_lab/docs
+===== FILE LIST =====
+commands/fs_lab/shared/report_backup.txt
+commands/fs_lab/docs/report.txt
+===== REPORT CONTENT =====
+OS Lab Report
+===== HARD LINK INODE VERIFICATION =====
+12281 commands/fs_lab/docs/report.txt
+12281 commands/fs_lab/shared/report_backup.txt
+===== FILE METADATA =====
+  File: commands/fs_lab/docs/report.txt
+  Size: 14        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,48	Inode: 12281       Links: 2
+Access: (0644/-rw-r--r--)  Uid: ( 1000/       a)   Gid: ( 1000/       a)
+Access: 2026-11-22 15:15:24.584875217 +0000
+Modify: 2026-11-22 15:07:37.844388756 +0000
+Change: 2026-11-22 15:08:07.407831076 +0000
+ Birth: 2026-11-22 15:07:37.844388756 +0000
+===== INODE AVAILABILITY =====
+Filesystem       Inodes IUsed    IFree IUse% Mounted on
+/dev/sdd       67108864 49713 67059151    1% /
+===== SECTOR CALCULATIONS =====
+10 KiB file:
+10 * 1024 = 10240 bytes
+10240 / 512 = 20 sectors
+2 GiB disk:
+2 * 1024^3 = 2147483648 bytes
+2147483648 / 512 = 4194304 sectors

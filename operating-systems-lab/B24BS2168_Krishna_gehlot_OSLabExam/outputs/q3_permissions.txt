@@ -1,0 +1,9 @@
+===== FILE PERMISSIONS =====
+-rw------- 1 a a 0 Nov 22 15:16 commands/fs_lab/private.txt
+-rw-r--r-- 1 a a 0 Nov 22 15:16 commands/fs_lab/shared.txt
+-rwx------ 1 a a 0 Nov 22 15:16 commands/fs_lab/run.sh
+
+===== PERMISSION EXPLANATIONS =====
+600: Owner has read and write permissions; group and others have no permissions.
+644: Owner has read and write permissions; group and others have read-only permissions.
+700: Owner has read, write and execute permissions; group and others have no permissions.
