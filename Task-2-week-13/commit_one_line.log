@@ -1,0 +1,7 @@
+*   658ee10 (HEAD -> main, develop) Merge feature/lr-upgrade: resolve learning_rate conflict (keep 0.05)
+|\  
+| * 701b465 (feature/lr-upgrade) Lower learning rate, add validation dependency, run training in background
+* | c4d933c Hotfix: set learning rate to 0.1 on main
+|/  
+* 16e34c9 Add baseline preprocessing, training entry point and local run script
+* ca7dc17 Initial project structure
