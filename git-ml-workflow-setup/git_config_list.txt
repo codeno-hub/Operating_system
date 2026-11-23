@@ -1,0 +1,11 @@
+user.name=Data Scientist
+user.email=data.scientist@example.com
+user.signingkey=/home/claude/.ssh/commit_signing_key.pub
+gpg.format=ssh
+gpg.ssh.program=/tmp/code-sign
+commit.gpgsign=true
+http.proxyauthmethod=basic
+core.checkstat=minimal
+core.trustctime=false
+push.negotiate=true
+init.defaultbranch=main
